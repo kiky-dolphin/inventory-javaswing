@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package inventoris;
-import com.mysql.jdbc.Connection;
 import static inventoris.MenuUtama.dashboard;
 import static inventoris.MenuUtama.divisi;
 import static inventoris.MenuUtama.txtUserLogin;
