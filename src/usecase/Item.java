@@ -41,12 +41,12 @@ public class Item {
 			while(results.next()) {
 				ItemModel item = new ItemModel();
 				item.setId(results.getInt("id"));
-				item.setCode(results.getString("id"));
-				item.setDescription(results.getString("id"));
-				item.setSize(results.getString("id"));
-				item.setArticle(results.getString("id"));
-				item.setMerk(results.getString("id"));
-				item.setSellPrice(results.getInt("id"));
+				item.setCode(results.getString("code"));
+				item.setDescription(results.getString("description"));
+				item.setSize(results.getString("size"));
+				item.setArticle(results.getString("article"));
+				item.setMerk(results.getString("merk"));
+				item.setSellPrice(results.getInt("sell_price"));
 				items.add(item);
 			}
 		} catch (Exception e) {
@@ -70,7 +70,12 @@ public class Item {
 		}	
 	}
 
-	public void destroy() {
-
+	public void destroy(int id) throws Exception {
+		try {
+			PreparedStatement stmt = this.conn.prepareStatement("DELETE FROM items WHERE id = ?");
+			stmt.setInt(1, id);
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 }
