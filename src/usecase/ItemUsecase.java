@@ -9,9 +9,9 @@ import java.util.List;
 import model.*;
 import dto.CreateItemDTO;
 import dto.UpdateItemDTO;
-public class Item {
+public class ItemUsecase {
 	private Connection conn;
-	public Item(Connection conn) {
+	public ItemUsecase(Connection conn) {
 		this.conn = conn;
 	}
 

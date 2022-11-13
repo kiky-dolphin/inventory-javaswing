@@ -8,9 +8,9 @@ import javax.naming.spi.DirStateFactory.Result;
 
 import dto.LoginDTO;
 import dto.RegisterDTO;
-public class User {
+public class UserUsecase {
 	private Connection conn;
-	public User(Connection conn) {
+	public UserUsecase(Connection conn) {
 		this.conn = conn;
 	}
 
