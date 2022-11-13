@@ -4,19 +4,21 @@
  */
 package utils;
 
+import model.UserModel;
+
 /**
  *
  * @author ahaidaralbaqir
  */
 public class Session {
-    private String name;
-    private int userId;
-    
-    public String getName() {
-        return this.name;
-    }
-    
-    
-    
-  
+    private UserModel users; 
+	
+	public Session(UserModel users) {
+		this.users = users;
+	}
+
+	public UserModel getUser() 
+	{
+		return this.users;
+	}
 }
