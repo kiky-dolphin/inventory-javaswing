@@ -24,6 +24,7 @@ public class Item {
 			stmt.setString(4, item.getArticle());
 			stmt.setString(5, item.getMerk());
 			stmt.setInt(6, item.getSellPrice());
+			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw e;
 		}
@@ -65,6 +66,7 @@ public class Item {
 			stmt.setInt(5, item.getSellPrice());
 			stmt.setString(6, item.getMerk());
 			stmt.setInt(7, id);
+			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw e;
 		}	
@@ -74,6 +76,7 @@ public class Item {
 		try {
 			PreparedStatement stmt = this.conn.prepareStatement("DELETE FROM items WHERE id = ?");
 			stmt.setInt(1, id);
+			stmt.executeUpdate();
 		} catch (Exception e) {
 			throw e;
 		}
