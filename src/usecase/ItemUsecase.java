@@ -30,6 +30,31 @@ public class ItemUsecase {
 		}
 	}
 
+	public ItemModel findByCode(String code) throws Exception {
+		ItemModel item = new ItemModel();
+		try {
+			PreparedStatement stmt = this.conn.prepareStatement("SELECT * FROM items WHERE code = ?");
+			stmt.setString(1, code);
+			ResultSet results = stmt.executeQuery();
+			if (!results.next())
+			{
+				throw new Exception("Item not found");
+			}	
+			while(results.next()) 
+			{
+				item.setId(results.getInt("id"));
+				item.setCode(results.getString("code"));
+				item.setDescription(results.getString("description"));
+				item.setSize(results.getString("size"));
+				item.setMerk(results.getString("merk"));
+				item.setSellPrice(results.getInt("sell_price"));
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return item;
+	}
+
 	/**
 	 * @return
 	 * @throws Exception
