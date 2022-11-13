@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package inventoris;
-import com.mysql.jdbc.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import koneksi.Connect;
+import java.sql.Connection;
 /**
  *
  * @author PANASONIC

@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/B:/Development/NetbeansProject/INVENTORIS/src/inventoris/INVENTORIS.java</file>
-            <file>file:/B:/Development/NetbeansProject/INVENTORIS/src/inventoris/FrmLogin.java</file>
-            <file>file:/B:/Development/NetbeansProject/INVENTORIS/src/inventoris/FrmReport.java</file>
-            <file>file:/B:/Development/NetbeansProject/INVENTORIS/src/inventoris/FrmRegister.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/FrmBarang.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/FrmSearch.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/dto/CreateItemDTO.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/FrmReport.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/config/Database.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/utils/Session.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/MenuUtama.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/FrmRegister.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/INVENTORIS.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/inventoris/AdminDashboard.java</file>
+            <file>file:/Users/ahaidaralbaqir/ahaidaralbaqir/projects/inventory-javaswing/src/koneksi/Connect.java</file>
         </group>
     </open-files>
 </project-private>

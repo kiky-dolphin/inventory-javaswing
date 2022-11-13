@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package inventoris;
-import com.mysql.jdbc.Connection;
 import static inventoris.MenuUtama.dashboard;
 import static inventoris.MenuUtama.divisi;
 import static inventoris.MenuUtama.txtUserLogin;
@@ -203,7 +202,7 @@ public class FrmLogin extends javax.swing.JFrame {
         try{
             Statement statement = (Statement)Connect.GetConnection().createStatement();
         //query tabel user    
-            ResultSet result=statement.executeQuery("SELECT * FROM users WHERE username='" + txtUser.getText()+"'" + "AND password = '"+txtPassword.getText()+"'");
+            ResultSet result=statement.executeQuery("SELECT * FROM user WHERE username='" + txtUser.getText()+"'" + "AND password = '"+txtPassword.getText()+"'");
             if(result.next()){
                 if(txtPassword.getText().equals(result.getString("Password"))){
                     //hak akses admin

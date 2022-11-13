@@ -5,7 +5,6 @@
  */
 package inventoris;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.sun.glass.events.KeyEvent;
 import static inventoris.MenuUtama.dashboard;
 import static inventoris.MenuUtama.divisi;
 import static inventoris.MenuUtama.txtUserLogin;
