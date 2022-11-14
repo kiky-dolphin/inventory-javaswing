@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package inventoris;
+import com.mysql.jdbc.Connection;
 import static inventoris.MenuUtama.dashboard;
 import static inventoris.MenuUtama.divisi;
 import static inventoris.MenuUtama.txtUserLogin;
@@ -201,56 +202,53 @@ public class FrmLogin extends javax.swing.JFrame {
         //pengecualian
         try{
             Statement statement = (Statement)Connect.GetConnection().createStatement();
-        //query tabel user    
-            ResultSet result=statement.executeQuery("SELECT * FROM user WHERE username='" + txtUser.getText()+"'" + "AND password = '"+txtPassword.getText()+"'");
+            
+            ResultSet result=statement.executeQuery("SELECT * FROM users WHERE username='" + txtUser.getText()+"'" + "AND password = '"+txtPassword.getText()+"'");
             if(result.next()){
                 if(txtPassword.getText().equals(result.getString("Password"))){
-                    //hak akses admin
                     if(result.getString("level").equals("ADMINISTRATOR")){
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(true);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));                        
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
+                        
                     }
                     else if(result.getString("level").equals("SUPERVISOR")){
-                    //hak akses supervisor
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(false);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
                         
                     }else if(result.getString("level").equals("USER")){
-                    //hak akses user    
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(false);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
                         this.dispose();
                     }
-               //ketika password salah
+               
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Password Salah");
                     txtPassword.requestFocus();
                     txtPassword.setText("");
                 }
             }else{
-                //ketika user tidak ada pada database atau text kosong maka kembali ke user
                 JOptionPane.showMessageDialog(rootPane, "User tidak ditemukan");
                 txtUser.setText("");
                 txtPassword.setText("");
                 txtUser.requestFocus();
             }
         } catch(Exception e){
-            //ketika koneksi gagal
-            JOptionPane.showMessageDialog(rootPane,"Koneksi Gagal! \nCek Koneksi Database Anda");
+            JOptionPane.showMessageDialog(rootPane,"Gagal");
             this.dispose();
         }
+            btnLogin.requestFocus();
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyPressed
@@ -281,28 +279,28 @@ public class FrmLogin extends javax.swing.JFrame {
                 if(txtPassword.getText().equals(result.getString("Password"))){
                     if(result.getString("level").equals("ADMINISTRATOR")){
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(true);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
                         
                     }
                     else if(result.getString("level").equals("SUPERVISOR")){
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(false);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
                         
                     }else if(result.getString("level").equals("USER")){
                         new MenuUtama().show();
-                        txtUserLogin.setText(result.getString(5));
-                        divisi.setText(result.getString(4));
+                        txtUserLogin.setText(result.getString(4));
+                        divisi.setText(result.getString(3));
                         this.dispose();
                         dashboard.setEnabled(false);
-                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(5)+" \nAnda Login Sebagai "+result.getString(4));
+                        JOptionPane.showMessageDialog(rootPane, "Selamat Datang "+result.getString(4)+" \nAnda Login Sebagai "+result.getString(3));
                         this.dispose();
                     }
                
